@@ -7,6 +7,7 @@ import ChatInterface from "./components/ChatInterface";
 import SearchResults from "./components/SearchResults";
 import AddRecord from "./components/AddRecord";
 import RecordDetail from "./components/RecordDetail";
+import SplashScreen from "./components/SplashScreen";
 import { supabase } from "./lib/supabase";
 import { generateEmbedding } from "./lib/embeddings";
 
@@ -20,6 +21,7 @@ export default function App() {
 	const [error, setError] = useState(null);
 	const [isAdding, setIsAdding] = useState(false);
 	const [isAddRecordOpen, setIsAddRecordOpen] = useState(false);
+	const [isAppReady, setIsAppReady] = useState(false);
 
 	// Derived: courses and teachers lists for AddRecord dropdowns
 	const coursesList = useMemo(
@@ -360,6 +362,8 @@ export default function App() {
 				position: "relative",
 			}}
 		>
+			{!isAppReady && <SplashScreen onReady={() => setIsAppReady(true)} />}
+			
 			<Canvas camera={{ position: [0, 0, 80], fov: 60 }}>
 				<color attach="background" args={["#020202"]} />
 				<Universe
