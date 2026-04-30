@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { EffectComposer, Bloom } from "@react-three/postprocessing";
+import { EffectComposer, Bloom, DepthOfField, Noise, Vignette, ChromaticAberration } from "@react-three/postprocessing";
+import { BlendFunction } from "postprocessing";
 import Universe from "./components/Universe";
 import ChatInterface from "./components/ChatInterface";
 import SearchResults from "./components/SearchResults";
@@ -365,7 +366,7 @@ export default function App() {
 			{!isAppReady && <SplashScreen onReady={() => setIsAppReady(true)} />}
 			
 			<Canvas camera={{ position: [0, 0, 80], fov: 60 }}>
-				<color attach="background" args={["#020202"]} />
+				<color attach="background" args={["#000000"]} />
 				<Universe
 					records={records}
 					searchResults={searchResults}
@@ -377,12 +378,21 @@ export default function App() {
 					hideLabels={isAddRecordOpen}
 				/>
 				<OrbitControls makeDefault enableDamping dampingFactor={0.05} />
-				<EffectComposer disableNormalPass>
+				<EffectComposer disableNormalPass multisampling={0}>
 					<Bloom
 						luminanceThreshold={0.2}
-						mipmapBlur
-						intensity={1.5}
-						radius={0.6}
+						luminanceSmoothing={0.9}
+						height={300}
+						intensity={2.5}
+						radius={0.8}
+					/>
+					<Noise opacity={0.03} blendFunction={BlendFunction.OVERLAY} />
+					<Vignette eskil={false} offset={0.1} darkness={1.1} />
+					<ChromaticAberration
+						offset={[0.0005, 0.0005]}
+						blendFunction={BlendFunction.NORMAL}
+						radialModulation={false}
+						modulationOffset={0.0}
 					/>
 				</EffectComposer>
 			</Canvas>
