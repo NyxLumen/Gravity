@@ -95,13 +95,13 @@ function RelationLines({ nodes, highlightedIds, hoveredId, departmentCenters }) 
 			const colorA = pair.a.customColor || ENTITY_COLORS[pair.a.entity_type] || ENTITY_COLORS.General;
 			const colorB = pair.b.customColor || ENTITY_COLORS[pair.b.entity_type] || ENTITY_COLORS.General;
 
-			// Make the lines brighter (multiply by 1.5)
-			col[idx * 6] = colorA.r * 1.5;
-			col[idx * 6 + 1] = colorA.g * 1.5;
-			col[idx * 6 + 2] = colorA.b * 1.5;
-			col[idx * 6 + 3] = colorB.r * 1.5;
-			col[idx * 6 + 4] = colorB.g * 1.5;
-			col[idx * 6 + 5] = colorB.b * 1.5;
+			// Make the lines very subtle
+			col[idx * 6] = colorA.r * 0.3;
+			col[idx * 6 + 1] = colorA.g * 0.3;
+			col[idx * 6 + 2] = colorA.b * 0.3;
+			col[idx * 6 + 3] = colorB.r * 0.3;
+			col[idx * 6 + 4] = colorB.g * 0.3;
+			col[idx * 6 + 5] = colorB.b * 0.3;
 		});
 
 		return { positions: pos, colors: col, count: pairs.length, activePairs: pairs };
@@ -145,9 +145,8 @@ function RelationLines({ nodes, highlightedIds, hoveredId, departmentCenters }) 
 				ref={matRef}
 				vertexColors
 				transparent
-				opacity={0.4}
+				opacity={0.15}
 				blending={THREE.AdditiveBlending}
-				linewidth={2}
 			/>
 		</lineSegments>
 	);
@@ -442,11 +441,17 @@ export default function Universe({
 			state.controls.enabled = false;
 			const targetNode = nodes.find((n) => n.id === selectedRecordId);
 			if (targetNode) {
-				const targetPos = new THREE.Vector3(
+				const localPos = new THREE.Vector3(
 					targetNode.x,
 					targetNode.y,
 					targetNode.z
 				);
+				// Convert local position to world position using the group's matrix
+				const targetPos = localPos.clone();
+				if (groupRef.current) {
+					targetPos.applyMatrix4(groupRef.current.matrixWorld);
+				}
+				
 				const camPos = targetPos
 					.clone()
 					.add(new THREE.Vector3(10, 5, 20));
