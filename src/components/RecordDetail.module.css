@@ -24,22 +24,29 @@
 	border-radius: 4px;
 }
 
-/* Close button */
-.closeBtn {
-	position: absolute;
-	top: 12px;
-	right: 12px;
+.topBar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 12px;
+}
+
+.iconBtn {
 	background: transparent;
 	border: none;
 	color: #71717a;
 	cursor: pointer;
-	font-size: 1.2rem;
 	padding: 4px;
-	transition: color 0.2s ease;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: color 0.2s ease, background 0.2s ease;
 }
 
-.closeBtn:hover {
+.iconBtn:hover {
 	color: #ffffff;
+	background: rgba(255, 255, 255, 0.1);
 }
 
 /* Type badge */
@@ -48,7 +55,6 @@
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 0.08em;
-	margin-bottom: 8px;
 }
 
 /* Title */
@@ -436,5 +442,32 @@ select.editInput option {
 	background: rgba(239, 68, 68, 0.1);
 	border-color: rgba(239, 68, 68, 0.8);
 	color: #fecaca;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+	.container {
+		top: 16px;
+		left: 16px;
+		right: 16px;
+		width: auto;
+		max-height: 40vh;
+		padding: 16px;
+	}
+	
+	.container.collapsed {
+		max-height: none;
+		height: auto;
+	}
+
+	.title {
+		font-size: 1.2rem;
+		margin-bottom: 8px;
+	}
+	
+	.content {
+		font-size: 0.75rem;
+		margin-bottom: 12px;
+	}
 }
 

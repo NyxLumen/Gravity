@@ -193,3 +193,25 @@
 		transform: rotate(360deg);
 	}
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+	.title {
+		font-size: 2.5rem;
+		letter-spacing: 0.3em;
+		margin-right: -0.3em;
+	}
+	.subtitle {
+		font-size: 0.6rem;
+		margin-bottom: 1.5rem;
+		letter-spacing: 0.1em;
+	}
+	.searchBar {
+		height: 44px;
+		padding: 0 12px 0 16px;
+	}
+	.stageActive {
+		top: 100%;
+		transform: translate(-50%, calc(-100% - 90px)); /* leave space for AddRecord FAB */
+	}
+}

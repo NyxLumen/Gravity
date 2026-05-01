@@ -334,3 +334,27 @@ select.input option {
 .glassButtonMoved:hover {
 	transform: scale(1.1);
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+	.glassButton {
+		bottom: 24px;
+		left: auto;
+		right: 24px;
+		transform: none;
+		width: 48px;
+		height: 48px;
+	}
+	.glassButton:hover {
+		transform: scale(1.1);
+	}
+	.glassButtonMoved {
+		left: auto;
+		right: 24px;
+		transform: none;
+	}
+	.modal {
+		padding: 20px;
+		width: 95%;
+	}
+}
