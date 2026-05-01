@@ -548,22 +548,22 @@ export default function Universe({
 							position={[0, 7, 0]}
 							center
 							transform
-							distanceFactor={40}
+							distanceFactor={8}
 							style={{
 								pointerEvents: "none",
 								color: "#fff",
-								fontSize: "0.8rem",
+								fontSize: "4rem",
 								fontWeight: "300",
 								fontFamily: 'inherit',
 								textTransform: "uppercase",
 								letterSpacing: "0.2em",
 								whiteSpace: "nowrap",
 								background: "rgba(0, 0, 0, 0.6)",
-								padding: "4px 12px",
-								borderRadius: "2px",
-								border: `1px solid ${info.color}33`,
+								padding: "20px 60px",
+								borderRadius: "10px",
+								border: `5px solid ${info.color}33`,
 								backdropFilter: "blur(8px)",
-								boxShadow: "0 8px 32px rgba(0, 0, 0, 0.8)",
+								boxShadow: "0 40px 160px rgba(0, 0, 0, 0.8)",
 								textAlign: "center",
 								zIndex: 1,
 							}}
