@@ -10,19 +10,17 @@
 [![HuggingFace](https://img.shields.io/badge/Transformers-MiniLM--L6--v2-000000?style=for-the-badge&logo=huggingface)](https://huggingface.co/)
 
 <br/>
-
-<!-- ADD HERO IMAGE HERE: A sweeping, high-quality GIF or WebP showing the majestic slow rotation of the 3D universe with the stark black background. -->
-<img src="https://via.placeholder.com/1000x500/000000/ffffff?text=[Hero+GIF:+Sweeping+Cinematic+Universe+Rotation]" alt="Gravity Hero View" width="100%"/>
+<img src="image.png" alt="Gravity Hero View" width="100%"/>
 
 <br/>
 
-> *"Do not go gentle into that good night... Rage, rage against the dying of the light."*
+> _"Do not go gentle into that good night... Rage, rage against the dying of the light."_
 
 </div>
 
 ---
 
-**Gravity** is an experimental, performance-driven data visualization engine that renders complex relational databases as an interactive, cinematic 3D universe. 
+**Gravity** is an experimental, performance-driven data visualization engine that renders complex relational databases as an interactive, cinematic 3D universe.
 
 It pioneers a **zero-API-cost semantic search architecture**, utilizing WebAssembly to generate neural network vector embeddings entirely within the user's browser, cross-referencing them against a Supabase `pgvector` database in real-time.
 
@@ -46,7 +44,7 @@ It pioneers a **zero-API-cost semantic search architecture**, utilizing WebAssem
 
 ## 🚀 Quick Start
 
-Want to spin up the universe locally? 
+Want to spin up the universe locally?
 
 ```bash
 # 1. Clone & Install
