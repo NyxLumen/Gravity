@@ -34,7 +34,7 @@ It pioneers a **zero-API-cost semantic search architecture**, utilizing WebAssem
 
 <br/>
 
-## 🧠 System Architecture
+## 🧠 System Architecture e
 
 - **Client Engine**: React + Vite + `@react-three/fiber`
 - **Machine Learning**: In-browser NLP via `transformers.js` (all-MiniLM-L6-v2)
@@ -55,7 +55,7 @@ npm install
 # 2. Setup Environment
 # Create a .env file with VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY
 
-# 3. Populate the Universe 
+# 3. Populate the Universe
 node scripts/seed.js
 
 # 4. Launch Ignition
