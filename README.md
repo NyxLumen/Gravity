@@ -55,7 +55,7 @@ npm install
 # 2. Setup Environment
 # Create a .env file with VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY
 
-# 3. Populate the Universe
+# 3. Populate the Universe 
 node scripts/seed.js
 
 # 4. Launch Ignition
