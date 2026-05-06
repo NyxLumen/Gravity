@@ -34,7 +34,7 @@ It pioneers a **zero-API-cost semantic search architecture**, utilizing WebAssem
 
 <br/>
 
-## 🧠 System Architecture e
+## 🧠 System Architecture
 
 - **Client Engine**: React + Vite + `@react-three/fiber`
 - **Machine Learning**: In-browser NLP via `transformers.js` (all-MiniLM-L6-v2)
